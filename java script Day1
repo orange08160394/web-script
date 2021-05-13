@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08160394(王玉婷)</title>
+</head>
+<body> 
+<h2 id="header">What Can JavaScript Do?</h2>
+<p id="demo">JavaScript can change HTML content.</p>
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+    document.getElementById("header").innerHTML = "Hello!";
+    document.getElementById("header").style.color = "red";
+    document.getElementById("demo").style.color = "green";'>Click Me!</button>
+<h2 id="header2">What Can JavaScript Do?</h2>
+
+<p id="text1">JavaScript can change HTML attribute values.</p>
+
+<p id="text2">In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+<button onclick="document.getElementById('myImage').src='pic_bulbon.gif';
+     document.getElementById('header2').style.color = 'red';
+     document.getElementById('text2').style.display='none';
+">Turn on the light</button>
+
+<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='pic_bulboff.gif';
+document.getElementById('text1').style.color = 'lightblue';
+document.getElementById('text2').style.display='block';
+">Turn off the light</button>
+</body>
+</html>
