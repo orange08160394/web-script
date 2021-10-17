@@ -1,0 +1,55 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication2.SiteMaster" %>
+<!DOCTYPE html>
+<html>
+    <script>
+        function ShowMCU() {
+            window.open('https://web.mcu.edu.tw/','MCU', config = 'hight=400,width=400');
+        }
+        function ROCyear(x) {
+            var z;
+            z = x - 1911;
+            return (z);
+        }
+    </script>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - 我的 ASP.NET  應用程式</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+ 
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            
+        </asp:ScriptManager>
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+    </form>
+    <h2>銘傳大學</h2>
+    <button onclick="ShowMCU">MCU WEB</button>
+</body>
+    <script>
+        var x = "亞洲";
+        var now = new Date();
+        var Today = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getDay());
+        var WeekDay = [Today.getDay()];
+        document.write("<h3>" + x + "台灣第一所美國大學<h3>");
+        //document.write("<h4>今天是" + Today.getFullYear() + "年"+(Today.getMonth() + 1) + "月" + Today.getDate() + "日</h4>");
+        //var WeekDay = ['日', '一', '二', '三', '四', '五', '六'];
+        //document.write("<h4>今天是" + Today.getFullYear() + "年" + (Today.getMonth() + 1) + "月" + Today.getDate() + "日<br>星期" + Today.getDay() + "</h4>");
+        document.write("<h4>今天是民國" + ROCyear(Today.getFullYear()) + "年" + (Today.getMonth() + 1) + "月" + Today.getDate() + "日<br>星期" + Today.getDay() + "</h4>");
+        if (Today.getDay() == 5) { document.write("明天放假了!") }
+        else { document.write("放假還早呢!"); }
+        document.write("<h5><i>網頁最後修改日期:"+document.lastModified+"</i></h5>");
+    </script>
+</html>
